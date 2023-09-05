@@ -675,6 +675,13 @@
   dependencies:
     "@lezer/common" "^1.0.0"
 
+"@mailchimp/mailchimp_transactional@^1.0.50":
+  version "1.0.50"
+  resolved "https://registry.yarnpkg.com/@mailchimp/mailchimp_transactional/-/mailchimp_transactional-1.0.50.tgz#5ddcbe9bce2329c61c1014449d1c8174efe40794"
+  integrity sha512-SaNFseFPSDQlOYM9JTyYY6wauMu6qJ8eExo+jssFyb20ZaVvxKX1eTb3Gm5aW/4aWuxn6nofU+02sCk51//wdw==
+  dependencies:
+    axios "^0.21.1"
+
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz#7619c2eb21b25483f6d167548b4cfd5a7488c3d5"
@@ -999,6 +1006,29 @@
     argparse "~1.0.9"
     colors "~1.2.1"
     string-argv "~0.3.1"
+
+"@sendgrid/client@^7.7.0":
+  version "7.7.0"
+  resolved "https://registry.yarnpkg.com/@sendgrid/client/-/client-7.7.0.tgz#f8f67abd604205a0d0b1af091b61517ef465fdbf"
+  integrity sha512-SxH+y8jeAQSnDavrTD0uGDXYIIkFylCo+eDofVmZLQ0f862nnqbC3Vd1ej6b7Le7lboyzQF6F7Fodv02rYspuA==
+  dependencies:
+    "@sendgrid/helpers" "^7.7.0"
+    axios "^0.26.0"
+
+"@sendgrid/helpers@^7.7.0":
+  version "7.7.0"
+  resolved "https://registry.yarnpkg.com/@sendgrid/helpers/-/helpers-7.7.0.tgz#93fb4b6e2f0dc65080440d6a784cc93e8e148757"
+  integrity sha512-3AsAxfN3GDBcXoZ/y1mzAAbKzTtUZ5+ZrHOmWQ279AuaFXUNCh9bPnRpN504bgveTqoW+11IzPg3I0WVgDINpw==
+  dependencies:
+    deepmerge "^4.2.2"
+
+"@sendgrid/mail@7.7.0":
+  version "7.7.0"
+  resolved "https://registry.yarnpkg.com/@sendgrid/mail/-/mail-7.7.0.tgz#aba09f5ce2e9d8ceee92284c3ea8b4a90b0e38fe"
+  integrity sha512-5+nApPE9wINBvHSUxwOxkkQqM/IAAaBYoP9hw7WwgDNQPxraruVqHizeTitVtKGiqWCKm2mnjh4XGN3fvFLqaw==
+  dependencies:
+    "@sendgrid/client" "^7.7.0"
+    "@sendgrid/helpers" "^7.7.0"
 
 "@sentry/core@6.19.7":
   version "6.19.7"
@@ -1427,6 +1457,22 @@
   resolved "https://registry.yarnpkg.com/@strapi/provider-audit-logs-local/-/provider-audit-logs-local-4.12.4.tgz#3fd99ab492bd3deee1f189a7734baa11dad1c4cc"
   integrity sha512-Aipd9juLad9Gsl/kPKHcgRrHSqL3kTDfov+3Zi2IzOFqJOICYdq+p+Kz50FlMHg3o8kWnX8dxvFSfy3udWw4iA==
 
+"@strapi/provider-email-nodemailer@^4.12.6":
+  version "4.12.6"
+  resolved "https://registry.yarnpkg.com/@strapi/provider-email-nodemailer/-/provider-email-nodemailer-4.12.6.tgz#7165c37e34bf61e29efbe97ff4582f35172c48c8"
+  integrity sha512-RSmRrjqT02cVbQmPnyutMUQdJEMLZJATGAfTk05OP9v960XoVWGVzI4S3YV4aFzzscGwtKQ7nOrlXKmmdH4wLA==
+  dependencies:
+    lodash "4.17.21"
+    nodemailer "6.9.1"
+
+"@strapi/provider-email-sendgrid@^4.12.6":
+  version "4.12.6"
+  resolved "https://registry.yarnpkg.com/@strapi/provider-email-sendgrid/-/provider-email-sendgrid-4.12.6.tgz#0774171ce7a8a7e4e84a9d04ba6307af050102a1"
+  integrity sha512-KoaPbOai+eOx0U8CKGNO9SDXNEXQanSnS5B+tHNaKh715ZvosFmhu8j2NVC4QM95Y3wUI0RSgSEhz6aeqfvIAQ==
+  dependencies:
+    "@sendgrid/mail" "7.7.0"
+    "@strapi/utils" "4.12.6"
+
 "@strapi/provider-email-sendmail@4.12.4":
   version "4.12.4"
   resolved "https://registry.yarnpkg.com/@strapi/provider-email-sendmail/-/provider-email-sendmail-4.12.4.tgz#85ea9b61e401d742229e369f02d5998c35a4250b"
@@ -1546,6 +1592,18 @@
   version "4.12.4"
   resolved "https://registry.yarnpkg.com/@strapi/utils/-/utils-4.12.4.tgz#9b739bb024d6f214266b25bae9a53026e77af1ae"
   integrity sha512-PbnoECaQSyKWq83+lwukc+VB0lolUySvUUyKOO+FYbzJPQVgbPXu1F2mslgGaXseo8X/QfhfTiirXD2UM3MagA==
+  dependencies:
+    "@sindresorhus/slugify" "1.1.0"
+    date-fns "2.30.0"
+    http-errors "1.8.1"
+    lodash "4.17.21"
+    p-map "4.0.0"
+    yup "0.32.9"
+
+"@strapi/utils@4.12.6":
+  version "4.12.6"
+  resolved "https://registry.yarnpkg.com/@strapi/utils/-/utils-4.12.6.tgz#23140cedd88b0100c5aee9b4b3323e7ac30bc7cc"
+  integrity sha512-2LcRkyrhGNRAXLq0QCoElIjoLNQgHKAv4qTdQSwHCOs+kwsUozfSSC7rcDDh7veAqFklv6V28CTXqsoVnqMccg==
   dependencies:
     "@sindresorhus/slugify" "1.1.0"
     date-fns "2.30.0"
@@ -2317,6 +2375,20 @@ axios@1.4.0:
     follow-redirects "^1.15.0"
     form-data "^4.0.0"
     proxy-from-env "^1.1.0"
+
+axios@^0.21.1:
+  version "0.21.4"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.4.tgz#c67b90dc0568e5c1cf2b0b858c43ba28e2eda575"
+  integrity sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==
+  dependencies:
+    follow-redirects "^1.14.0"
+
+axios@^0.26.0:
+  version "0.26.1"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.26.1.tgz#1ede41c51fcf51bbbd6fd43669caaa4f0495aaa9"
+  integrity sha512-fPwcX4EvnSHuInCMItEhAGnaSEXRBjtzh9fOtsE6E1G6p7vl7edEeZe11QHf18+6+9gR5PbKV/sGKNaD8YaMeA==
+  dependencies:
+    follow-redirects "^1.14.8"
 
 babel-plugin-macros@^3.1.0:
   version "3.1.0"
@@ -4019,7 +4091,7 @@ fn.name@1.x.x:
   resolved "https://registry.yarnpkg.com/fn.name/-/fn.name-1.1.0.tgz#26cad8017967aea8731bc42961d04a3d5988accc"
   integrity sha512-GRnmB5gPyJpAhTQdSZTSp9uaPSvl09KoYcMQtsB9rQoOmzs9dH6ffeccH+Z+cv6P68Hu5bC6JjRh4Ah/mHSNRw==
 
-follow-redirects@^1.0.0, follow-redirects@^1.15.0:
+follow-redirects@^1.0.0, follow-redirects@^1.14.0, follow-redirects@^1.14.8, follow-redirects@^1.15.0:
   version "1.15.2"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.2.tgz#b460864144ba63f2681096f274c4e57026da2c13"
   integrity sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==
@@ -6131,6 +6203,11 @@ nodemailer-shared@1.1.0:
   dependencies:
     nodemailer-fetch "1.6.0"
 
+nodemailer@6.9.1:
+  version "6.9.1"
+  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-6.9.1.tgz#8249d928a43ed85fec17b13d2870c8f758a126ed"
+  integrity sha512-qHw7dOiU5UKNnQpXktdgQ1d3OFgRAekuvbJLcdG5dnEo/GtcTHRYM7+UfJARdOFU9WUQO8OiIamgWPmiSFHYAA==
+
 noms@0.0.0:
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/noms/-/noms-0.0.0.tgz#da8ebd9f3af9d6760919b27d9cdc8092a7332859"
@@ -7785,6 +7862,13 @@ std-env@^3.0.1:
   version "3.3.3"
   resolved "https://registry.yarnpkg.com/std-env/-/std-env-3.3.3.tgz#a54f06eb245fdcfef53d56f3c0251f1d5c3d01fe"
   integrity sha512-Rz6yejtVyWnVjC1RFvNmYL10kgjC49EOghxWn0RFqlCHGFpQx+Xe7yW3I4ceK1SGrWIGMjD5Kbue8W/udkbMJg==
+
+strapi-provider-plugin-mandrill@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/strapi-provider-plugin-mandrill/-/strapi-provider-plugin-mandrill-1.0.3.tgz#750a8953a861cf5957b7b55b29768b20a67cb68f"
+  integrity sha512-xkwfZqbuZ2xPNxgeoPQ5y5PU5cPn1ApXYouzzE/pPktEQ7w5M8JWRrtEnnmrkTU0r3e5G1NlBXketdD671+HEw==
+  dependencies:
+    "@mailchimp/mailchimp_transactional" "^1.0.50"
 
 stream-chain@2.2.5, stream-chain@^2.2.5:
   version "2.2.5"
