@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "packs",
+  "info": {
+    "singularName": "pack",
+    "pluralName": "packs",
+    "displayName": "Pack",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "packId": {
+      "type": "uid",
+      "required": true
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "admin::user"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "destination": {
+      "type": "string",
+      "required": true
+    },
+    "departureDate": {
+      "type": "datetime",
+      "required": true
+    },
+    "arrivalDate": {
+      "type": "datetime"
+    },
+    "packSize": {
+      "type": "decimal",
+      "required": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "processing",
+        "packed",
+        "in transit",
+        "attempted delivery",
+        "delivered",
+        "cancelled",
+        "lost",
+        "damaged "
+      ],
+      "required": true
+    },
+    "origin": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "decimal"
+    }
+  }
+}
