@@ -1,0 +1,33 @@
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Directory used by npm
+node_modules
+
+# Directory used by yarn
+.yarn-cache
+
+# Editors and IDEs
+.idea
+.vscode
+*.swp
+*.swo
+*.swn
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*.swo
