@@ -11,6 +11,9 @@ ENV PATH /opt/node_modules/.bin:$PATH
 
 WORKDIR /opt/app
 
+# Copy the .env file into the image
+COPY .env .env
+
 # Copy the rest of the application files
 COPY . .
 
