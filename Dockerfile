@@ -14,6 +14,14 @@ WORKDIR /opt/app
 # Copy the rest of the application files
 COPY . .
 
+# Copy the scripts into the image
+COPY scripts/import-strapi-data.sh /scripts/import-strapi-data.sh
+COPY entrypoint.sh /entrypoint.sh
+
+# Make scripts executable
+RUN chmod +x /scripts/import-strapi-data.sh
+RUN chmod +x /entrypoint.sh
+
 # Ensure correct permissions
 RUN chown -R node:node /opt/app
 
@@ -22,14 +30,6 @@ USER node
 
 # Build the application
 RUN ["yarn", "build"]
-
-# Copy the scripts into the image
-COPY scripts/import-strapi-data.sh /scripts/import-strapi-data.sh
-COPY entrypoint.sh /entrypoint.sh
-
-# Make scripts executable
-RUN chmod +x /scripts/import-strapi-data.sh
-RUN chmod +x /entrypoint.sh
 
 # Expose necessary ports
 EXPOSE 1337
